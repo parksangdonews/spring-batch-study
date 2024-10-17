@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/batchstudy?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&useSSL=true&verifyServerCertificate=true
+    username: studyid
+    password: Passw0rd!
+    hikari:
+      maximum-pool-size: 20
+  batch:
+    jdbc:
+      schema: "classpath:org/springframework/batch/core/schema-mysql.sql"
+      initialize-schema: always
+    job:
+      enabled: true
+logging:
+  level:
+    root: trace
+
+# H2 DataBase용
+#spring:
+#  datasource:
+#    hikari:
+#      maximum-pool-size: 10
+#    url: jdbc:h2:mem:testdb
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password: password
