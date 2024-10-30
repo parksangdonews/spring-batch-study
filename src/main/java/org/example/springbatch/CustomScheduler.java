@@ -13,9 +13,12 @@ public class CustomScheduler {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @Scheduled(fixedDelay = 5000)
+    //@Scheduled(fixedDelay = 5000)
     public void schedule() {
         System.out.println(
             "This time is " + jdbcTemplate.queryForObject("SELECT NOW()", String.class));
     }
+
+
+
 }
